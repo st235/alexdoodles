@@ -4,4 +4,4 @@ title:  "Hello world! 🌎"
 author: "st235"
 ---
 
-Hello world!
+Hello world! {{ site.baseurl }}
