@@ -4,7 +4,7 @@ description: New Technology Blog 📔
 highlighter: rouge
 logo: false
 paginate: 15
-baseurl: /
+baseurl: https://st235.github.io/
 #domain_name: 'http://github.io'
 google_analytics: 'UA-112035371-1'
 
