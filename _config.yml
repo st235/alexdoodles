@@ -13,6 +13,10 @@ url:            'st235.github.io'
 author:         'Alexander Dadukin'
 encoding: utf-8
 
+links:
+  title: Home
+  url: /
+
 authors:
   st235:
     display_name: Alexander Dadukin
