@@ -12,3 +12,12 @@ google_analytics: 'UA-112035371-1'
 url:            'st235.github.io'
 author:         'Alexander Dadukin'
 encoding: utf-8
+
+authors:
+  st235:
+    display_name: Alexander Dadukin
+    gravatar: 1e5b1443b01e77523a9379c57178fbfc
+    email: st235@yandex.ru
+    web: https://st235.github.io/
+    twitter: snow_manul
+    github: st235
