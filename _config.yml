@@ -2,7 +2,6 @@ name: st235.github.io
 description: My new blog about technologies.
 #meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
-markdown: redcarpet
 highlighter: rouge
 logo: false
 paginate: 15
