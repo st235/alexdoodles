@@ -4,7 +4,6 @@ title:  "System.currentTimeMillis() против SystemClock.elapsedRealtime()"
 published: true
 author: "st235"
 ---
-## System.currentTimeMillis() против SystemClock.elapsedRealtime()
 
 Вы когда-нибудь пробовали рассчитать время между двумя событиями? Обычно для этого используют `System.currentTimeMillis()`, но я рекомендую вместо этого познакомиться с `SystemClock.elapsedRealtime()`.
 
