@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Hello world! 🌎"
+title:  "System.currentTimeMillis() против SystemClock.elapsedRealtime()"
+published: true
 author: "st235"
 ---
 ## System.currentTimeMillis() против SystemClock.elapsedRealtime()
