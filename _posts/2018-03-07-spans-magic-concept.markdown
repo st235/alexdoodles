@@ -5,7 +5,6 @@ published: true
 author: "st235"
 ---
 
-## Грокаем Spans.
 __Замечание:__ эта статья - это перевод. [Оригинал](http://flavienlaurent.com/blog/2014/01/31/spans/).
 
 ### Как и когда применять Span?
