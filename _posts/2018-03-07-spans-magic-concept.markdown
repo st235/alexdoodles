@@ -349,5 +349,5 @@ span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6,
 
 EmbossMaskFilter with a blue ForegroundColorSpan and a bold StyleSpan
 
-![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }} = 512x)
+![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:width="50%"}
 
