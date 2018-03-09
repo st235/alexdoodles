@@ -6,7 +6,8 @@ author: "st235"
 ---
 
 Очень часто, листая очередную сторис из инстаграма или просматривая пост в фейсбуке, я замечал, что невольно задумывался - как реализован тот или иной механизм выделения текста. После небольшого исследования я пришел к выводу, что в Android OS уже релизован мощный механизм работы с текстом - Spans.
-__Замечание:__ эта статья основана на официальной документации, ответов со stackoverflow, статьи[Spans, a Powerful Concept](http://flavienlaurent.com/blog/2014/01/31/spans/), [AOSP](https://github.com/aosp-mirror/platform_frameworks_base) и является агргерующей. Так же для этой статьи я написал [тестовое приложение](https://github.com/st235/GrokkingSpans), где вы можете посмтотреть приемы, которые я применял в работе со Spannable.
+
+__Замечание:__ эта статья основана на официальной документации, ответов со stackoverflow, статьи  [Spans, a Powerful Concept](http://flavienlaurent.com/blog/2014/01/31/spans/), [AOSP](https://github.com/aosp-mirror/platform_frameworks_base) и является агргерующей. Так же для этой статьи я написал [тестовое приложение](https://github.com/st235/GrokkingSpans), где вы можете посмотреть приемы, которые я применял в работе со Spannable.
 
 ### Как и когда применять Span?
 - если Span влияет на форматирование отдельных символов, следует наследоваться от [CharacterStyle](https://developer.android.com/reference/android/text/style/CharacterStyle.html).
@@ -363,22 +364,16 @@ span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6,
 - getSize: метод, возвращающий размер вашей замены.
 
 __text__: текст, управляемый Span
-
 __start__: начальный индекс текста
-
 __end__: конечный индекс текста
-
 __fm__: метрики шрифта (может быть нулем)
 
 - draw: здесь вы можете рисовать с помощью Canvas.
 
 __x__: x-координата, где рисовать текст
-
 __top__: верх линии
-
 __y__: базовый уровень (baseline)
-
-bottom: нижняя граница линии
+__bottom__: нижняя граница линии
 
 #### FrameSpan
 
