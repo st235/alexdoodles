@@ -72,7 +72,7 @@ public BulletSpan (int gapWidth, int color)
 span = new BulletSpan(toPx(8), Color.CYAN);
 ```
 
-![BulletSpan]({{ "/assets/images/spans/bullet.jpg" }} = 512x)
+![BulletSpan]({{ "/assets/images/spans/bullet.jpg" }}){:width="60% !important"}
 
 #### QuoteSpan
 [android.text.style.QuoteSpan](https://developer.android.com/reference/android/text/style/QuoteSpan.html)
@@ -89,7 +89,7 @@ public QuoteSpan (int color)
 span = new QuoteSpan(Color.CYAN);
 ```
 
-![QuoteSpan]({{ "/assets/images/spans/quote.jpg" }} = 512x)
+![QuoteSpan]({{ "/assets/images/spans/quote.jpg" }}){:width="60% !important"}
 
 #### AlignmentSpan.Standard
 [android.text.style.AlignmentSpan.Standard](https://developer.android.com/reference/android/text/style/AlignmentSpan.Standard.html)
@@ -106,7 +106,7 @@ public Standard(Layout.Alignment align)
 span = new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE);
 ```
 
-![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }} = 512x)
+![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }}){:width="60% !important"}
 
 #### UnderlineSpan
 [android.text.style.UnderlineSpan](https://developer.android.com/reference/android/text/style/UnderlineSpan.html)
@@ -118,7 +118,7 @@ The UnderlineSpan affects character-level text formatting. It allows you to unde
 span = new UnderlineSpan();
 ```
 
-![UnderlineSpan]({{ "/assets/images/spans/underline.jpg" }} = 512x)
+![UnderlineSpan]({{ "/assets/images/spans/underline.jpg" }}){:width="60% !important"}
 
 #### StrikethroughSpan
 [android.text.style.StrikethroughSpan](https://developer.android.com/reference/android/text/style/StrikethroughSpan.html)
@@ -130,7 +130,7 @@ The StrikethroughSpan affects character-level text formatting. It allows you to 
 span = new StrikethroughSpan();
 ```
 
-![StrikethroughSpan]({{ "/assets/images/spans/strikethrough.jpg" }} = 512x)
+![StrikethroughSpan]({{ "/assets/images/spans/strikethrough.jpg" }}){:width="60% !important"}
 
 #### SubscriptSpan
 [android.text.style.SubscriptSpan](https://developer.android.com/reference/android/text/style/SubscriptSpan.html)
@@ -142,7 +142,7 @@ The SubscriptSpan affects character-level text formatting. It allows you to subs
 span = new SubscriptSpan();
 ```
 
-![Subscript]({{ "/assets/images/spans/subscript.jpg" }} = 512x)
+![Subscript]({{ "/assets/images/spans/subscript.jpg" }}){:width="60% !important"}
 
 #### SuperscriptSpan
 [android.text.style.SuperscriptSpan](https://developer.android.com/reference/android/text/style/SuperscriptSpan.html)
@@ -154,7 +154,7 @@ The SuperscriptSpan affects character-level text formatting. It allows you to su
 span = new SuperscriptSpan();
 ```
 
-![Superscript]({{ "/assets/images/spans/superscript.jpg" }} = 512x)
+![Superscript]({{ "/assets/images/spans/superscript.jpg" }}){:width="60% !important"}
 
 #### BackgroundColorSpan
 [android.text.style.BackgroundColorSpan](https://developer.android.com/reference/android/text/style/BackgroundColorSpan.html)
@@ -171,7 +171,7 @@ public BackgroundColorSpan (int color)
 span = new BackgroundColorSpan(Color.GREEN);
 ```
 
-![BackgroundColorSpan]({{ "/assets/images/spans/background.jpg" }} = 512x)
+![BackgroundColorSpan]({{ "/assets/images/spans/background.jpg" }}){:width="60% !important"}
 
 #### ForegroundColorSpan
 [android.text.style.ForegroundColorSpan](https://developer.android.com/reference/android/text/style/ForegroundColorSpan.html)
@@ -188,7 +188,7 @@ public ForegroundColorSpan (int color)
 span = new ForegroundColorSpan(Color.RED);
 ```
 
-![ForegroundColorSpan]({{ "/assets/images/spans/foreground.jpg" }} = 512x)
+![ForegroundColorSpan]({{ "/assets/images/spans/foreground.jpg" }}){:width="60% !important"}
 
 #### ImageSpan
 [android.text.style.ImageSpan](https://developer.android.com/reference/android/text/style/ImageSpan.html)
@@ -200,7 +200,7 @@ The ImageSpan affects character-level text formatting. It allows you to a charac
 span = new ImageSpan(this, R.drawable.pic1_small);
 ```
 
-![ImageSpan]({{ "/assets/images/spans/image.jpg" }} = 512x)
+![ImageSpan]({{ "/assets/images/spans/image.jpg" }}){:width="60% !important"}
 
 #### StyleSpan
 [android.text.style.StyleSpan](https://developer.android.com/reference/android/text/style/StyleSpan.html)
@@ -217,7 +217,7 @@ public StyleSpan (int style)
 span = new StyleSpan(Typeface.BOLD | Typeface.ITALIC);
 ```
 
-![StyleSpan]({{ "/assets/images/spans/style.jpg" }} = 512x)
+![StyleSpan]({{ "/assets/images/spans/style.jpg" }}){:width="60% !important"}
 
 #### TypefaceSpan
 [android.text.style.TypefaceSpan](https://developer.android.com/reference/android/text/style/TypefaceSpan.html)
@@ -234,7 +234,7 @@ public TypefaceSpan (String family)
 span = new TypefaceSpan("serif");
 ```
 
-![TypefaceSpan]({{ "/assets/images/spans/typeface.jpg" }} = 512x)
+![TypefaceSpan]({{ "/assets/images/spans/typeface.jpg" }}){:width="60% !important"}
 
 #### TextAppearanceSpan
 [android.text.style.TextAppearanceSpan](https://developer.android.com/reference/android/text/style/TextAppearanceSpan.html)
@@ -288,7 +288,7 @@ public AbsoluteSizeSpan(int size, boolean dip)
 span = new AbsoluteSizeSpan(24, true);
 ```
 
-![AbsoluteSizeSpan]({{ "/assets/images/spans/absolutesize.jpg" }} = 512x)
+![AbsoluteSizeSpan]({{ "/assets/images/spans/absolutesize.jpg" }}){:width="60% !important"}
 
 #### RelativeSizeSpan
 [android.text.style.RelativeSizeSpan](https://developer.android.com/reference/android/text/style/RelativeSizeSpan.html)
@@ -305,7 +305,7 @@ public RelativeSizeSpan(float proportion)
 span = new RelativeSizeSpan(2.0f);
 ```
 
-![RelativeSizeSpan]({{ "/assets/images/spans/relativesize.jpg" }} = 512x)
+![RelativeSizeSpan]({{ "/assets/images/spans/relativesize.jpg" }}){:width="60% !important"}
 
 #### ScaleXSpan
 [android.text.style.ScaleXSpan](https://developer.android.com/reference/android/text/style/ScaleXSpan.html)
@@ -322,7 +322,7 @@ public ScaleXSpan(float proportion)
 span = new ScaleXSpan(3.0f);
 ```
 
-![ScaleXSpan]({{ "/assets/images/spans/scalex.jpg" }} = 512x)
+![ScaleXSpan]({{ "/assets/images/spans/scalex.jpg" }}){:width="60% !important"}
 
 #### MaskFilterSpan
 [android.text.style.MaskFilterSpan](https://developer.android.com/reference/android/text/style/MaskFilterSpan.html)
@@ -349,5 +349,5 @@ span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6,
 
 EmbossMaskFilter with a blue ForegroundColorSpan and a bold StyleSpan
 
-![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:class="", :width="60%"}
+![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:width="60% !important"}
 
