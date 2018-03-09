@@ -48,4 +48,304 @@ TextLine класс содержит 3 набора Spans:
 
 Для того чтобы понять, как работаюет FontMetrics достаточно просто взглянуть на следующую картинку.
 
-![FontMetrics]({{ "/assets/images/fontmetrics.png" }})
+![FontMetrics]({{ "/assets/images/spans/fontmetrics.png" }})
+
+### Playground
+
+Все примеры, описанные в этой статье реализованы в [sample приложении](https://github.com/st235/GrokkingSpans).  
+
+#### Bulletspan
+
+[android.text.style.BulletSpan](https://developer.android.com/reference/android/text/style/BulletSpan.html)
+
+**BulletSpan** влияет на стиль всего параграфа и позволяет добавить точку в начало параграфа.
+
+```java
+/*
+public BulletSpan (int gapWidth, int color)
+-gapWidth: gap in px between bullet and text
+-color: bullet color (optionnal, default is transparent)
+*/
+
+//create a black BulletSpan with a gap of 15px
+span = new BulletSpan(15, Color.BLACK);
+```
+
+![BulletSpan]({{ "/assets/images/spans/bullet.jpg" }})
+
+#### QuoteSpan
+android.text.style.QuoteSpan
+
+The QuoteSpan affects paragraph-level text formatting. It allows you to put a quote vertical line on a paragraph.
+
+```java
+/*
+public QuoteSpan (int color)
+-color: quote vertical line color (optionnal, default is Color.BLUE)
+*/
+
+//create a red quote
+span = new QuoteSpan(Color.RED);
+```
+
+![QuoteSpan]({{ "/assets/images/spans/quote.jpg" }})
+
+#### AlignmentSpan.Standard
+android.text.style.AlignmentSpan.Standard
+
+The AlignmentSpan.Standard affects paragraph-level text formatting. It allows you to align (normal, center, opposite) a paragraph.
+
+```java
+/*
+public Standard(Layout.Alignment align)
+-align: alignment to set
+*/
+
+//align center a paragraph
+span = new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER);
+```
+
+![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }})
+
+#### UnderlineSpan
+android.text.style.UnderlineSpan
+
+The UnderlineSpan affects character-level text formatting. It allows you to underline a character thanks to Paint#setUnderlineText(true) .
+
+```java
+//underline a character
+span = new UnderlineSpan();
+```
+
+![UnderlineSpan]({{ "/assets/images/spans/underline.jpg" }})
+
+#### StrikethroughSpan
+android.text.style.StrikethroughSpan
+
+The StrikethroughSpan affects character-level text formatting. It allows you to strikethrough a character thanks to Paint#setStrikeThruText(true)) .
+
+```java
+//strikethrough a character
+span = new StrikethroughSpan();
+```
+
+![StrikethroughSpan]({{ "/assets/images/spans/strikethrough.jpg" }})
+
+#### SubscriptSpan
+android.text.style.SubscriptSpan
+
+The SubscriptSpan affects character-level text formatting. It allows you to subscript a character by reducing the TextPaint#baselineShift .
+
+```java
+//subscript a character
+span = new SubscriptSpan();
+```
+
+![Subscript]({{ "/assets/images/spans/subscript.jpg" }})
+
+#### SuperscriptSpan
+android.text.style.SuperscriptSpan
+
+The SuperscriptSpan affects character-level text formatting. It allows you to superscript a character by increasing the TextPaint#baselineShift .
+
+```java
+//superscript a character
+span = new SuperscriptSpan();
+```
+
+![Superscript]({{ "/assets/images/spans/superscript.jpg" }})
+
+#### BackgroundColorSpan
+android.text.style.BackgroundColorSpan
+
+The BackgroundColorSpan affects character-level text formatting. It allows you to set a background color on a character.
+
+```java
+/*
+public BackgroundColorSpan (int color)
+-color: background color
+*/
+
+//set a green background
+span = new BackgroundColorSpan(Color.GREEN);
+```
+
+![BackgroundColorSpan]({{ "/assets/images/spans/background.jpg" }})
+
+#### ForegroundColorSpan
+android.text.style.ForegroundColorSpan
+
+The ForegroundColorSpan affects character-level text formatting. It allows you to set a foreground color on a character.
+
+```java
+/*
+public ForegroundColorSpan (int color)
+-color: foreground color
+*/
+
+//set a red foreground
+span = new ForegroundColorSpan(Color.RED);
+```
+
+![ForegroundColorSpan]({{ "/assets/images/spans/foreground.jpg" }})
+
+#### ImageSpan
+android.text.style.ImageSpan
+
+The ImageSpan affects character-level text formatting. It allows you to a character by an image. It’s one of the few span that is well documented so enjoy it!
+
+```java
+//replace a character by pic1_small image
+span = new ImageSpan(this, R.drawable.pic1_small);
+```
+
+![ImageSpan]({{ "/assets/images/spans/image.jpg" }})
+
+#### StyleSpan
+android.text.style.StyleSpan
+
+The StyleSpan affects character-level text formatting. It allows you to set a style (bold, italic, normal) on a character.
+
+```java
+/*
+public StyleSpan (int style)
+-style: int describing the style (android.graphics.Typeface)
+*/
+
+//set a bold+italic style
+span = new StyleSpan(Typeface.BOLD | Typeface.ITALIC);
+```
+
+![StyleSpan]({{ "/assets/images/spans/style.jpg" }})
+
+#### TypefaceSpan
+android.text.style.TypefaceSpan
+
+The TypefaceSpan affects character-level text formatting. It allows you to set a font family (monospace, serif etc) on a character.
+
+```java
+/*
+public TypefaceSpan (String family)
+-family: a font family
+*/
+
+//set the serif family
+span = new TypefaceSpan("serif");
+```
+
+![TypefaceSpan]({{ "/assets/images/spans/typeface.jpg" }})
+
+#### TextAppearanceSpan
+android.text.style.TextAppearanceSpan
+
+The TextAppearanceSpan affects character-level text formatting. It allows you to set a appearance on a character.
+
+```java
+/*
+public  TextAppearanceSpan(Context context, int appearance, int colorList)
+-context: a valid context
+-appearance: text appearance resource (ex: android.R.style.TextAppearance_Small)
+-colorList: a text color resource (ex: android.R.styleable.Theme_textColorPrimary)
+
+public TextAppearanceSpan(String family, int style, int size, ColorStateList color, ColorStateList linkColor)
+-family: a font family
+-style: int describing the style (android.graphics.Typeface)
+-size: text size
+-color: a text color
+-linkColor: a link text color
+*/
+
+//set the serif family
+span = new TextAppearanceSpan(this/*a context*/, R.style.SpecialTextAppearance);
+```
+
+__styles.xml__
+```xml
+<style name="SpecialTextAppearance" parent="@android:style/TextAppearance">
+    <item name="android:textColor">@color/color1</item>
+    <item name="android:textColorHighlight">@color/color2</item>
+    <item name="android:textColorHint">@color/color3</item>
+    <item name="android:textColorLink">@color/color4</item>
+    <item name="android:textSize">28sp</item>
+    <item name="android:textStyle">italic</item>
+</style>
+```
+
+#### AbsoluteSizeSpan
+android.text.style.AbsoluteSizeSpan
+
+The AbsoluteSizeSpan affects character-level text formatting. It allows you to set an absolute text size on a character.
+
+```java
+/*
+public AbsoluteSizeSpan(int size, boolean dip)
+-size: a size
+-dip: false, size is in px; true, size is in dip (optionnal, default false)
+*/
+
+//set text size to 24dp
+span = new AbsoluteSizeSpan(24, true);
+```
+
+![AbsoluteSizeSpan]({{ "/assets/images/spans/absolutesize.jpg" }})
+
+#### RelativeSizeSpan
+android.text.style.RelativeSizeSpan
+
+The RelativeSizeSpan affects character-level text formatting. It allows you to set an relative text size on a character.
+
+```java
+/*
+public RelativeSizeSpan(float proportion)
+-proportion: a proportion of the actual text size
+*/
+
+//set text size 2 times bigger 
+span = new RelativeSizeSpan(2.0f);
+```
+
+![RelativeSizeSpan]({{ "/assets/images/spans/relativesize.jpg" }})
+
+#### ScaleXSpan
+android.text.style.ScaleXSpan
+
+The ScaleXSpan affects character-level text formatting. It allows you to scale on x a character.
+
+```java
+/*
+public ScaleXSpan(float proportion)
+-proportion: a proportion of actual text scale x
+*/
+
+//scale x 3 times bigger 
+span = new ScaleXSpan(3.0f);
+```
+
+![ScaleXSpan]({{ "/assets/images/spans/scalex.jpg" }})
+
+#### MaskFilterSpan
+android.text.style.MaskFilterSpan
+
+The MaskFilterSpan affects character-level text formatting. It allows you to set a android.graphics.MaskFilter on a character.
+
+Warning: BlurMaskFilter is not supported with hardware acceleration.
+
+```java
+/*
+public MaskFilterSpan(MaskFilter filter)
+-filter: a filter to apply
+*/
+
+//Blur a character
+span = new MaskFilterSpan(new BlurMaskFilter(density*2, BlurMaskFilter.Blur.NORMAL));
+//Emboss a character
+span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6, 3.5f));
+```
+
+- BlurMaskFilter
+**Важно:** эта маска [не поддерживает аппартаное ускорение](https://stackoverflow.com/questions/11281404/android-blurmaskfilter-has-no-effect-in-canvas-drawoval-while-text-is-blurred).
+
+EmbossMaskFilter with a blue ForegroundColorSpan and a bold StyleSpan
+
+![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }})
+
