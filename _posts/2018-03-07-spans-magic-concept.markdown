@@ -5,7 +5,8 @@ published: true
 author: "st235"
 ---
 
-__Замечание:__ эта статья - это перевод. [Оригинал](http://flavienlaurent.com/blog/2014/01/31/spans/).
+Очень часто, листая очередную сторис из инстаграма или просматривая пост в фейсбуке, я замечал, что невольно задумывался - как реализован тот или иной механизм выделения текста. После небольшого исследования я пришел к выводу, что в Android OS уже релизован мощный механизм работы с текстом - Spans.
+__Замечание:__ эта статья основана на официальной документации, ответов со stackoverflow, статьи[Spans, a Powerful Concept](http://flavienlaurent.com/blog/2014/01/31/spans/), [AOSP](https://github.com/aosp-mirror/platform_frameworks_base) и является агргерующей. Так же для этой статьи я написал [тестовое приложение](https://github.com/st235/GrokkingSpans), где вы можете посмтотреть приемы, которые я применял в работе со Spannable.
 
 ### Как и когда применять Span?
 - если Span влияет на форматирование отдельных символов, следует наследоваться от [CharacterStyle](https://developer.android.com/reference/android/text/style/CharacterStyle.html).
@@ -72,7 +73,7 @@ public BulletSpan (int gapWidth, int color)
 span = new BulletSpan(toPx(8), Color.CYAN);
 ```
 
-![BulletSpan]({{ "/assets/images/spans/bullet.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![BulletSpan]({{ "/assets/images/spans/bullet.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### QuoteSpan
 [android.text.style.QuoteSpan](https://developer.android.com/reference/android/text/style/QuoteSpan.html)
@@ -89,7 +90,7 @@ public QuoteSpan (int color)
 span = new QuoteSpan(Color.CYAN);
 ```
 
-![QuoteSpan]({{ "/assets/images/spans/quote.jpg" }}){:style="width: 60% !important;"}
+![QuoteSpan]({{ "/assets/images/spans/quote.jpg" }}){:style="width: 70% !important;"}
 
 #### AlignmentSpan.Standard
 [android.text.style.AlignmentSpan.Standard](https://developer.android.com/reference/android/text/style/AlignmentSpan.Standard.html)
@@ -106,7 +107,7 @@ public Standard(Layout.Alignment align)
 span = new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE);
 ```
 
-![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }}){:style="width: 60% !important;" margin: auto;}
+![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }}){:style="width: 70% !important;" margin: auto;}
 
 #### UnderlineSpan
 [android.text.style.UnderlineSpan](https://developer.android.com/reference/android/text/style/UnderlineSpan.html)
@@ -118,19 +119,19 @@ UnderlineSpan влияет на отдельный символ. Позволя�
 span = new UnderlineSpan();
 ```
 
-![UnderlineSpan]({{ "/assets/images/spans/underline.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![UnderlineSpan]({{ "/assets/images/spans/underline.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### StrikethroughSpan
 [android.text.style.StrikethroughSpan](https://developer.android.com/reference/android/text/style/StrikethroughSpan.html)
 
-StrikethroughSpan также изменяет отдельный символ, добавляя к нему зачеркивание. Вызывает: [Paint#setStrikeThruText(true))](https://developer.android.com/reference/android/graphics/Paint.html#setStrikeThruText(boolean).
+StrikethroughSpan также изменяет отдельный символ, добавляя к нему зачеркивание. Вызывает: [Paint#setStrikeThruText(true))](https://developer.android.com/reference/android/graphics/Paint.html#setStrikeThruText(boolean)).
 
 ```java
 // strikethrough a character
 span = new StrikethroughSpan();
 ```
 
-![StrikethroughSpan]({{ "/assets/images/spans/strikethrough.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![StrikethroughSpan]({{ "/assets/images/spans/strikethrough.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### SubscriptSpan
 [android.text.style.SubscriptSpan](https://developer.android.com/reference/android/text/style/SubscriptSpan.html)
@@ -142,7 +143,7 @@ SubscriptSpan позволяет опустить символы, относит
 span = new SubscriptSpan();
 ```
 
-![Subscript]({{ "/assets/images/spans/subscript.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![Subscript]({{ "/assets/images/spans/subscript.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### SuperscriptSpan
 [android.text.style.SuperscriptSpan](https://developer.android.com/reference/android/text/style/SuperscriptSpan.html)
@@ -154,7 +155,7 @@ SuperscriptSpan поднимает символы относительно ба�
 span = new SuperscriptSpan();
 ```
 
-![Superscript]({{ "/assets/images/spans/superscript.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![Superscript]({{ "/assets/images/spans/superscript.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### BackgroundColorSpan
 [android.text.style.BackgroundColorSpan](https://developer.android.com/reference/android/text/style/BackgroundColorSpan.html)
@@ -171,7 +172,7 @@ public BackgroundColorSpan (int color)
 span = new BackgroundColorSpan(Color.CYAN);
 ```
 
-![BackgroundColorSpan]({{ "/assets/images/spans/background.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![BackgroundColorSpan]({{ "/assets/images/spans/background.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### ForegroundColorSpan
 [android.text.style.ForegroundColorSpan](https://developer.android.com/reference/android/text/style/ForegroundColorSpan.html)
@@ -188,7 +189,7 @@ public ForegroundColorSpan (int color)
 span = new ForegroundColorSpan(Color.CYAN);
 ```
 
-![ForegroundColorSpan]({{ "/assets/images/spans/foreground.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![ForegroundColorSpan]({{ "/assets/images/spans/foreground.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### ImageSpan
 [android.text.style.ImageSpan](https://developer.android.com/reference/android/text/style/ImageSpan.html)
@@ -200,7 +201,7 @@ ImageSpan влияет на форматирование символов. По�
 span = new ImageSpan(getApplicationContext(), R.drawable.cat);
 ```
 
-![ImageSpan]({{ "/assets/images/spans/image.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![ImageSpan]({{ "/assets/images/spans/image.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### StyleSpan
 [android.text.style.StyleSpan](https://developer.android.com/reference/android/text/style/StyleSpan.html)
@@ -217,7 +218,7 @@ public StyleSpan (int style)
 span = new StyleSpan(Typeface.BOLD);
 ```
 
-![StyleSpan]({{ "/assets/images/spans/style.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![StyleSpan]({{ "/assets/images/spans/style.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### TypefaceSpan
 [android.text.style.TypefaceSpan](https://developer.android.com/reference/android/text/style/TypefaceSpan.html)
@@ -234,7 +235,7 @@ public TypefaceSpan (String family)
 span = new TypefaceSpan("serif");
 ```
 
-![TypefaceSpan]({{ "/assets/images/spans/typeface.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![TypefaceSpan]({{ "/assets/images/spans/typeface.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### TextAppearanceSpan
 [android.text.style.TextAppearanceSpan](https://developer.android.com/reference/android/text/style/TextAppearanceSpan.html)
@@ -288,7 +289,7 @@ public AbsoluteSizeSpan(int size, boolean dip)
 span = new new AbsoluteSizeSpan(toPx(8));
 ```
 
-![AbsoluteSizeSpan]({{ "/assets/images/spans/absolutesize.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![AbsoluteSizeSpan]({{ "/assets/images/spans/absolutesize.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### RelativeSizeSpan
 [android.text.style.RelativeSizeSpan](https://developer.android.com/reference/android/text/style/RelativeSizeSpan.html)
@@ -305,7 +306,7 @@ public RelativeSizeSpan(float proportion)
 span = new RelativeSizeSpan(2.0f);
 ```
 
-![RelativeSizeSpan]({{ "/assets/images/spans/relativesize.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![RelativeSizeSpan]({{ "/assets/images/spans/relativesize.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### ScaleXSpan
 [android.text.style.ScaleXSpan](https://developer.android.com/reference/android/text/style/ScaleXSpan.html)
@@ -322,7 +323,7 @@ public ScaleXSpan(float proportion)
 span = new ScaleXSpan(2.0f);
 ```
 
-![ScaleXSpan]({{ "/assets/images/spans/scalex.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![ScaleXSpan]({{ "/assets/images/spans/scalex.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### MaskFilterSpan
 [android.text.style.MaskFilterSpan](https://developer.android.com/reference/android/text/style/MaskFilterSpan.html)
@@ -347,5 +348,39 @@ span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6,
 
 - EmbossMaskFilter
 
-![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:style="width: 60% !important; margin: auto;"}
+![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
+### Реализуем свой собственный Span
+
+В этом разделе мы увидим способ создания пользовательского Span, открывающего интересные перспективы для настройки текста.
+
+Во-первых, мы должны отнаследоваться от абстрактного класса [ReplacementSpan](https://developer.android.com/reference/android/text/style/ReplacementSpan.html).
+
+**Внимение**:  __если вы хотите только отрисовать собственный фон, необходимо использовать [LineBackgroundSpan](https://developer.android.com/reference/android/text/style/LineBackgroundSpan.html), который находится на уровне абзаца.__
+
+Необходимо реализовать следующие 2 метода:
+
+- getSize: метод, возвращающий размер вашей замены.
+
+__text__: текст, управляемый Span
+
+__start__: начальный индекс текста
+
+__end__: конечный индекс текста
+
+__fm__: метрики шрифта (может быть нулем)
+
+- draw: здесь вы можете рисовать с помощью Canvas.
+
+__x__: x-координата, где рисовать текст
+
+__top__: верх линии
+
+__y__: базовый уровень (baseline)
+
+bottom: нижняя граница линии
+
+
+### Вместо заключения
+
+На мой взгляд, любое мобильное приложение на 90% состоит из текста и картинок, а подобные механизмы расширения имеющихся возможностей, почему-то не пользуются по-полной. Я постарался осветить аспекты работы со Spans, для того чтобы Вы смогли разнообразить свои приложения, имея в руках такой мощный инструмент.
