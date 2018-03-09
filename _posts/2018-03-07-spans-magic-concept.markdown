@@ -72,7 +72,7 @@ public BulletSpan (int gapWidth, int color)
 span = new BulletSpan(toPx(8), Color.CYAN);
 ```
 
-![BulletSpan]({{ "/assets/images/spans/bullet.jpg" }}){:style="width: 60% !important;"}
+![BulletSpan]({{ "/assets/images/spans/bullet.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### QuoteSpan
 [android.text.style.QuoteSpan](https://developer.android.com/reference/android/text/style/QuoteSpan.html)
@@ -106,60 +106,60 @@ public Standard(Layout.Alignment align)
 span = new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE);
 ```
 
-![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }}){:style="width: 60% !important;"}
+![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }}){:style="width: 60% !important;" margin: auto;}
 
 #### UnderlineSpan
 [android.text.style.UnderlineSpan](https://developer.android.com/reference/android/text/style/UnderlineSpan.html)
 
-The UnderlineSpan affects character-level text formatting. It allows you to underline a character thanks to Paint#setUnderlineText(true) .
+UnderlineSpan влияет на отдельный символ. Позволяет проставить подчеркивание у отдельно заданных символов, вызывая [Paint#setUnderlineText(true)](https://developer.android.com/reference/android/graphics/Paint.html#setUnderlineText(boolean)).
 
 ```java
-//underline a character
+// underline a character
 span = new UnderlineSpan();
 ```
 
-![UnderlineSpan]({{ "/assets/images/spans/underline.jpg" }}){:style="width: 60% !important;"}
+![UnderlineSpan]({{ "/assets/images/spans/underline.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### StrikethroughSpan
 [android.text.style.StrikethroughSpan](https://developer.android.com/reference/android/text/style/StrikethroughSpan.html)
 
-The StrikethroughSpan affects character-level text formatting. It allows you to strikethrough a character thanks to Paint#setStrikeThruText(true)) .
+StrikethroughSpan также изменяет отдельный символ, добавляя к нему зачеркивание. Вызывает: [Paint#setStrikeThruText(true))](https://developer.android.com/reference/android/graphics/Paint.html#setStrikeThruText(boolean).
 
 ```java
-//strikethrough a character
+// strikethrough a character
 span = new StrikethroughSpan();
 ```
 
-![StrikethroughSpan]({{ "/assets/images/spans/strikethrough.jpg" }}){:style="width: 60% !important;"}
+![StrikethroughSpan]({{ "/assets/images/spans/strikethrough.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### SubscriptSpan
 [android.text.style.SubscriptSpan](https://developer.android.com/reference/android/text/style/SubscriptSpan.html)
 
-The SubscriptSpan affects character-level text formatting. It allows you to subscript a character by reducing the TextPaint#baselineShift .
+SubscriptSpan позволяет опустить символы, относительно базовой линии, с помощью смещения этой линии [TextPaint#baselineShift](https://developer.android.com/reference/android/text/TextPaint.html#baselineShift). Влияет на отдельно взятый символ.
 
 ```java
-//subscript a character
+// subscript a character
 span = new SubscriptSpan();
 ```
 
-![Subscript]({{ "/assets/images/spans/subscript.jpg" }}){:style="width: 60% !important;"}
+![Subscript]({{ "/assets/images/spans/subscript.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### SuperscriptSpan
 [android.text.style.SuperscriptSpan](https://developer.android.com/reference/android/text/style/SuperscriptSpan.html)
 
-The SuperscriptSpan affects character-level text formatting. It allows you to superscript a character by increasing the TextPaint#baselineShift .
+SuperscriptSpan поднимает символы относительно базовой линии, путем ее смещения [TextPaint#baselineShift](https://developer.android.com/reference/android/text/TextPaint.html#baselineShift). Влияет на отдельно взятый символ.
 
 ```java
-//superscript a character
+// superscript a character
 span = new SuperscriptSpan();
 ```
 
-![Superscript]({{ "/assets/images/spans/superscript.jpg" }}){:style="width: 60% !important;"}
+![Superscript]({{ "/assets/images/spans/superscript.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### BackgroundColorSpan
 [android.text.style.BackgroundColorSpan](https://developer.android.com/reference/android/text/style/BackgroundColorSpan.html)
 
-The BackgroundColorSpan affects character-level text formatting. It allows you to set a background color on a character.
+BackgroundColorSpan устанавливает фон для каждого символа.
 
 ```java
 /*
@@ -167,16 +167,16 @@ public BackgroundColorSpan (int color)
 -color: background color
 */
 
-//set a green background
-span = new BackgroundColorSpan(Color.GREEN);
+// set a cyan background
+span = new BackgroundColorSpan(Color.CYAN);
 ```
 
-![BackgroundColorSpan]({{ "/assets/images/spans/background.jpg" }}){:style="width: 60% !important;"}
+![BackgroundColorSpan]({{ "/assets/images/spans/background.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### ForegroundColorSpan
 [android.text.style.ForegroundColorSpan](https://developer.android.com/reference/android/text/style/ForegroundColorSpan.html)
 
-The ForegroundColorSpan affects character-level text formatting. It allows you to set a foreground color on a character.
+ForegroundColorSpan устанавливает цвет текста. Влияет на отдельно взятый символ.
 
 ```java
 /*
@@ -184,28 +184,28 @@ public ForegroundColorSpan (int color)
 -color: foreground color
 */
 
-//set a red foreground
-span = new ForegroundColorSpan(Color.RED);
+// set a cyan foreground
+span = new ForegroundColorSpan(Color.CYAN);
 ```
 
-![ForegroundColorSpan]({{ "/assets/images/spans/foreground.jpg" }}){:style="width: 60% !important;"}
+![ForegroundColorSpan]({{ "/assets/images/spans/foreground.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### ImageSpan
 [android.text.style.ImageSpan](https://developer.android.com/reference/android/text/style/ImageSpan.html)
 
-The ImageSpan affects character-level text formatting. It allows you to a character by an image. It’s one of the few span that is well documented so enjoy it!
+ImageSpan влияет на форматирование символов. Позволяет заменить 1 или несколько символов изображением. Довольно редко используется, но обладает отличной документацией.
 
 ```java
-//replace a character by pic1_small image
-span = new ImageSpan(this, R.drawable.pic1_small);
+//replace a character by cat image
+span = new ImageSpan(getApplicationContext(), R.drawable.cat);
 ```
 
-![ImageSpan]({{ "/assets/images/spans/image.jpg" }}){:style="width: 60% !important;"}
+![ImageSpan]({{ "/assets/images/spans/image.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### StyleSpan
 [android.text.style.StyleSpan](https://developer.android.com/reference/android/text/style/StyleSpan.html)
 
-The StyleSpan affects character-level text formatting. It allows you to set a style (bold, italic, normal) on a character.
+StyleSpan позволяет выставить стиль символа (bold, italic, normal).
 
 ```java
 /*
@@ -213,16 +213,16 @@ public StyleSpan (int style)
 -style: int describing the style (android.graphics.Typeface)
 */
 
-//set a bold+italic style
-span = new StyleSpan(Typeface.BOLD | Typeface.ITALIC);
+// set a bold style
+span = new StyleSpan(Typeface.BOLD);
 ```
 
-![StyleSpan]({{ "/assets/images/spans/style.jpg" }}){:style="width: 60% !important;"}
+![StyleSpan]({{ "/assets/images/spans/style.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### TypefaceSpan
 [android.text.style.TypefaceSpan](https://developer.android.com/reference/android/text/style/TypefaceSpan.html)
 
-The TypefaceSpan affects character-level text formatting. It allows you to set a font family (monospace, serif etc) on a character.
+TypefaceSpan позволяет указать font family (monospace, serif etc) отдельно взятого символа.
 
 ```java
 /*
@@ -230,16 +230,16 @@ public TypefaceSpan (String family)
 -family: a font family
 */
 
-//set the serif family
+// set the serif family
 span = new TypefaceSpan("serif");
 ```
 
-![TypefaceSpan]({{ "/assets/images/spans/typeface.jpg" }}){:style="width: 60% !important;"}
+![TypefaceSpan]({{ "/assets/images/spans/typeface.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### TextAppearanceSpan
 [android.text.style.TextAppearanceSpan](https://developer.android.com/reference/android/text/style/TextAppearanceSpan.html)
 
-The TextAppearanceSpan affects character-level text formatting. It allows you to set a appearance on a character.
+TextAppearanceSpan влияет на стиль каждого символа. Позволяет гибко настраивать комплексные параметры текста. 
 
 ```java
 /*
@@ -275,7 +275,7 @@ __styles.xml__
 #### AbsoluteSizeSpan
 [android.text.style.AbsoluteSizeSpan](https://developer.android.com/reference/android/text/style/AbsoluteSizeSpan.html)
 
-The AbsoluteSizeSpan affects character-level text formatting. It allows you to set an absolute text size on a character.
+AbsoluteSizeSpan позволяет выставить размер отдельно взятого символа в абсолютных величинах (пикселах).
 
 ```java
 /*
@@ -284,16 +284,16 @@ public AbsoluteSizeSpan(int size, boolean dip)
 -dip: false, size is in px; true, size is in dip (optionnal, default false)
 */
 
-//set text size to 24dp
-span = new AbsoluteSizeSpan(24, true);
+// set text size to 8dp
+span = new new AbsoluteSizeSpan(toPx(8));
 ```
 
-![AbsoluteSizeSpan]({{ "/assets/images/spans/absolutesize.jpg" }}){:style="width: 60% !important;"}
+![AbsoluteSizeSpan]({{ "/assets/images/spans/absolutesize.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### RelativeSizeSpan
 [android.text.style.RelativeSizeSpan](https://developer.android.com/reference/android/text/style/RelativeSizeSpan.html)
 
-The RelativeSizeSpan affects character-level text formatting. It allows you to set an relative text size on a character.
+RelativeSizeSpan позволяет выставить высоту отдельно взятого символа, относительно текущего размера текста.
 
 ```java
 /*
@@ -301,16 +301,16 @@ public RelativeSizeSpan(float proportion)
 -proportion: a proportion of the actual text size
 */
 
-//set text size 2 times bigger 
+// set text size 2 times bigger 
 span = new RelativeSizeSpan(2.0f);
 ```
 
-![RelativeSizeSpan]({{ "/assets/images/spans/relativesize.jpg" }}){:style="width: 60% !important;"}
+![RelativeSizeSpan]({{ "/assets/images/spans/relativesize.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### ScaleXSpan
 [android.text.style.ScaleXSpan](https://developer.android.com/reference/android/text/style/ScaleXSpan.html)
 
-The ScaleXSpan affects character-level text formatting. It allows you to scale on x a character.
+ScaleXSpan позволяет растянуть текст вдоль оси x. Влияет на отдельно взятый символ.
 
 ```java
 /*
@@ -318,18 +318,16 @@ public ScaleXSpan(float proportion)
 -proportion: a proportion of actual text scale x
 */
 
-//scale x 3 times bigger 
-span = new ScaleXSpan(3.0f);
+//scale x 2 times bigger 
+span = new ScaleXSpan(2.0f);
 ```
 
-![ScaleXSpan]({{ "/assets/images/spans/scalex.jpg" }}){:style="width: 60% !important;"}
+![ScaleXSpan]({{ "/assets/images/spans/scalex.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
 #### MaskFilterSpan
 [android.text.style.MaskFilterSpan](https://developer.android.com/reference/android/text/style/MaskFilterSpan.html)
 
-The MaskFilterSpan affects character-level text formatting. It allows you to set a android.graphics.MaskFilter on a character.
-
-Warning: BlurMaskFilter is not supported with hardware acceleration.
+MaskFilterSpan оказывает влияение на каждый символ по-отдельности. Позволяет устанавливать [android.graphics.MaskFilter](https://developer.android.com/reference/android/graphics/MaskFilter.html) для символов.
 
 ```java
 /*
@@ -337,9 +335,9 @@ public MaskFilterSpan(MaskFilter filter)
 -filter: a filter to apply
 */
 
-//Blur a character
-span = new MaskFilterSpan(new BlurMaskFilter(density*2, BlurMaskFilter.Blur.NORMAL));
-//Emboss a character
+// blur a character
+span = new MaskFilterSpan(new BlurMaskFilter(toPx(4), BlurMaskFilter.Blur.NORMAL));
+// emboss a character
 span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6, 3.5f));
 ```
 
@@ -347,7 +345,7 @@ span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6,
 
 **Важно:** эта маска [не поддерживает аппартаное ускорение](https://stackoverflow.com/questions/11281404/android-blurmaskfilter-has-no-effect-in-canvas-drawoval-while-text-is-blurred).
 
-EmbossMaskFilter with a blue ForegroundColorSpan and a bold StyleSpan
+- EmbossMaskFilter
 
-![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:style="width: 60% !important;"}
+![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:style="width: 60% !important; margin: auto;"}
 
