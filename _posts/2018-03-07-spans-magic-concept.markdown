@@ -343,6 +343,7 @@ span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6,
 ```
 
 - BlurMaskFilter
+
 **Важно:** эта маска [не поддерживает аппартаное ускорение](https://stackoverflow.com/questions/11281404/android-blurmaskfilter-has-no-effect-in-canvas-drawoval-while-text-is-blurred).
 
 EmbossMaskFilter with a blue ForegroundColorSpan and a bold StyleSpan
