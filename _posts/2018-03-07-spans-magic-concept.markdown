@@ -55,7 +55,7 @@ TextLine класс содержит 3 набора Spans:
 
 Все примеры, описанные в этой статье реализованы в [sample приложении](https://github.com/st235/GrokkingSpans).  
 
-#### Bulletspan
+#### BulletSpan
 
 [android.text.style.BulletSpan](https://developer.android.com/reference/android/text/style/BulletSpan.html)
 
@@ -90,7 +90,7 @@ public QuoteSpan (int color)
 span = new QuoteSpan(Color.CYAN);
 ```
 
-![QuoteSpan]({{ "/assets/images/spans/quote.jpg" }}){:style="width: 70% !important;"}
+![QuoteSpan]({{ "/assets/images/spans/quote.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### AlignmentSpan.Standard
 [android.text.style.AlignmentSpan.Standard](https://developer.android.com/reference/android/text/style/AlignmentSpan.Standard.html)
@@ -107,7 +107,7 @@ public Standard(Layout.Alignment align)
 span = new AlignmentSpan.Standard(Layout.Alignment.ALIGN_OPPOSITE);
 ```
 
-![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }}){:style="width: 70% !important;" margin: auto;}
+![AlignmentSpan.Standard]({{ "/assets/images/spans/standart.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
 #### UnderlineSpan
 [android.text.style.UnderlineSpan](https://developer.android.com/reference/android/text/style/UnderlineSpan.html)
