@@ -435,6 +435,81 @@ ForegroundColorSpan доступен только для чтения.
 Это означает, что вы не можете изменить цвет переднего плана после создания экзепляра ForegroundColorSpan.
 Итак, первое, что нужно сделать, это написать MutableForegroundColorSpan.
 
+#### MutableForegroundColorSpan
+
+```java
+public class MutableForegroundColorSpan extends ForegroundColorSpan {
+
+    @ColorInt
+    private int foregroundColor;
+
+    public MutableForegroundColorSpan(@ColorInt int color) {
+        super(color);
+        foregroundColor = color;
+    }
+
+    public MutableForegroundColorSpan(Parcel src) {
+        super(src);
+        foregroundColor = src.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeInt(foregroundColor);
+    }
+
+    @Override
+    public void updateDrawState(TextPaint ds) {
+        ds.setColor(getForegroundColor());
+    }
+
+    @Override
+    public int getForegroundColor() {
+        return foregroundColor;
+    }
+
+    public void setForegroundColor(@ColorInt int foregroundColor) {
+        this.foregroundColor = foregroundColor;
+    }
+}
+```
+
+Создаем Property для Animator
+
+```java
+    private final Property<MutableForegroundColorSpan, Integer> MUTABLE_FOREGROUND_COLOR_PROPERTY =
+            new Property<MutableForegroundColorSpan, Integer>(Integer.class, "MUTABLE_FOREGROUND_COLOR_PROPERTY") {
+                @Override
+                public Integer get(MutableForegroundColorSpan object) {
+                    return object.getForegroundColor();
+                }
+
+                @Override
+                public void set(MutableForegroundColorSpan object, Integer value) {
+                    object.setForegroundColor(value);
+                }
+            };
+```
+
+```java
+        TextView animatedTextView = new TextView(this);
+        addContentView(animatedTextView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        SpannableString text = new SpannableString(getString(R.string.text));
+        MutableForegroundColorSpan span = new MutableForegroundColorSpan(Color.BLACK);
+        text.setSpan(span, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        animatedTextView.setText(text);
+
+        ObjectAnimator animator = ObjectAnimator.ofInt(span, MUTABLE_FOREGROUND_COLOR_PROPERTY, Color.BLACK, Color.CYAN, Color.DKGRAY);
+        animator.setEvaluator(new ArgbEvaluator());
+        animator.addUpdateListener(animation -> {
+            animatedTextView.invalidate();
+        });
+        animator.setDuration(3500L);
+        animator.start();
+```
 
 ### Вместо заключения
 
