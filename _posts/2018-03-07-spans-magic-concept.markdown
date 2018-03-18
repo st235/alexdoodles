@@ -48,7 +48,7 @@ TextLine класс содержит 3 набора Spans:
 
 #### FontMetrics
 
-Для того чтобы понять, как работаюет FontMetrics достаточно просто взглянуть на следующую картинку.
+Для того чтобы понять, как работает FontMetrics достаточно просто взглянуть на следующую картинку.
 
 ![FontMetrics]({{ "/assets/images/spans/fontmetrics.png" }})
 
@@ -351,7 +351,8 @@ span = new MaskFilterSpan(new EmbossMaskFilter(new float[] { 1, 1, 1 }, 0.4f, 6,
 
 ![MaskFilterSpan]({{ "/assets/images/spans/maskfilter.jpg" }}){:style="width: 70% !important; margin: auto;"}
 
-### Реализуем свой собственный Span
+## Примеры работы со Spans
+### Реализуем свой собственный простой Span
 
 В этом разделе мы увидим способ создания пользовательского Span, открывающего интересные перспективы для настройки текста.
 
@@ -426,7 +427,13 @@ public class RoundBackgroundSpan implements LineBackgroundSpan {
         p.setColor(paintColor);
     }
 }
-```  
+```
+
+### Анимируем ForegoundColor
+
+ForegroundColorSpan доступен только для чтения. 
+Это означает, что вы не можете изменить цвет переднего плана после создания экзепляра ForegroundColorSpan.
+Итак, первое, что нужно сделать, это написать MutableForegroundColorSpan.
 
 
 ### Вместо заключения
