@@ -33,26 +33,26 @@ textView.setText(spannableString);
 
 Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста.
 
-![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.png" }}){:style="width: 70% !important; margin: auto;"}
+![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.png" }}){:style="width: 50% !important; margin: auto;"}
 
 **SpannableString.SPAN_EXCLUSIVE_INCLUSIVE**
 
 Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен слева от родителя и будет если справа.
 
-![Flag EXCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ei.png" }}){:style="width: 70% !important; margin: auto;"}
+![Flag EXCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ei.png" }}){:style="width: 50% !important; margin: auto;"}
 
 **SpannableString.SPAN_INCLUSIVE_EXCLUSIVE**
 
 
 Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен справа от родителя и будет если слева.
 
-![Flag INCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ie.png" }}){:style="width: 70% !important; margin: auto;"}
+![Flag INCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ie.png" }}){:style="width: 50% !important; margin: auto;"}
 
 **SpannableString.SPAN_INCLUSIVE_INCLUSIVE**
 
 Вставляемый текст никак будет перенимать `Spannable` рядом стоящего текста со всех сторон.
 
-![Flag INCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ii.png" }}){:style="width: 70% !important; margin: auto;"}
+![Flag INCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ii.png" }}){:style="width: 50% !important; margin: auto;"}
 
 #### Лейаутинг __(размещение)__
 
