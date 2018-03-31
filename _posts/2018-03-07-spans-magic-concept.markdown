@@ -17,6 +17,43 @@ __Замечание:__ эта статья основана на официал
 
 ### Окей, как же это работает?
 
+#### Флаги
+Прежде чем разместить `Spannable` мы должны определиться с тем, а какие варианты размещения вообще существуют.
+Типичный код, добавления выделения определенной области текста выглядит так:
+```java
+SpannableString spannableString = new SpannableString("abcd");
+BackgroundColorSpan backgroundSpan = new BackgroundColorSpan(Color.RED);
+spannableString.setSpan(backgroundSpan, 1 /* start */, 3 /* end */, Spannable.EXCLUSIVE_EXCLUSIVE);
+textView.setText(spannableString);
+```
+В данном примере сомнения вызывает только флаг **SpannableString.EXCLUSIVE_EXCLUSIVE**.
+Всего существует 4 флага и каждый из них отвечает, за то как будет взаимодействовать текст на котором уже есть `Span` и любая строка, которую вставят в эту. Давайте поглядим на них чуть внимательнее. 
+
+**SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE**
+
+Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста.
+
+![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.jpg" }}){:style="width: 70% !important; margin: auto;"}
+
+**SpannableString.SPAN_EXCLUSIVE_INCLUSIVE**
+
+Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен слева от родителя и будет если справа.
+
+![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.jpg" }}){:style="width: 70% !important; margin: auto;"}
+
+**SpannableString.SPAN_INCLUSIVE_EXCLUSIVE**
+
+
+Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен справа от родителя и будет если слева.
+
+![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.jpg" }}){:style="width: 70% !important; margin: auto;"}
+
+**SpannableString.SPAN_INCLUSIVE_INCLUSIVE**
+
+Вставляемый текст никак будет перенимать `Spannable` рядом стоящего текста со всех сторон.
+
+![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.jpg" }}){:style="width: 70% !important; margin: auto;"}
+
 #### Лейаутинг __(размещение)__
 
 Для размещения и рендеринга текста в TextView применяется класс [Layout](https://developer.android.com/reference/android/text/Layout.html). Он содержит флаг [__boolean mSpannedText__](https://github.com/aosp-mirror/platform_frameworks_base/blob/b056324630b8adfeb38393bcab49f3b9c720f4fd/core/java/android/text/Layout.java#L232), который обозначает является ли текст наследником [SpannableString](https://developer.android.com/reference/android/text/SpannableString.html). **Layout** обрабатывает только [ParagraphStyle Spans](https://developer.android.com/reference/android/text/style/ParagraphStyle.html).
