@@ -21,38 +21,47 @@ __Замечание:__ эта статья основана на официал
 Прежде чем разместить `Spannable` мы должны определиться с тем, а какие варианты размещения вообще существуют.
 Типичный код, добавления выделения определенной области текста выглядит так:
 ```java
-SpannableString spannableString = new SpannableString("abcd");
-BackgroundColorSpan backgroundSpan = new BackgroundColorSpan(Color.RED);
-spannableString.setSpan(backgroundSpan, 1 /* start */, 3 /* end */, Spannable.EXCLUSIVE_EXCLUSIVE);
-textView.setText(spannableString);
+    SpannableString spannableString = new SpannableString("abcd");
+    BackgroundColorSpan backgroundSpan = new BackgroundColorSpan(Color.RED);
+    spannableString.setSpan(backgroundSpan, 1 /* start */, 3 /* end */, Spannable.EXCLUSIVE_EXCLUSIVE);
+    textView.setText(spannableString);
 ```
 В данном примере сомнения вызывает только флаг **SpannableString.EXCLUSIVE_EXCLUSIVE**.
-Всего существует 4 флага и каждый из них отвечает, за то как будет взаимодействовать текст на котором уже есть `Span` и любая строка, которую вставят в эту. Давайте поглядим на них чуть внимательнее. 
+Всего существует 4 флага и каждый из них отвечает, как будет взаимодействовать текст на котором уже есть `Span` и строка, которую добавят к уже существующей. 
+Давайте взглянем на это чуть внимательнее. Для этого модифицируем пример:
+
+```java
+    SpannableStringBuilder spannableString = new SpannableStringBuilder("abcd");
+    BackgroundColorSpan backgroundColorSpan = new BackgroundColorSpan(Color.RED);
+    spannableString.setSpan(backgroundColorSpan, 1, 3, flag);
+    spannableString.insert(3, "x");
+    spannableString.insert(1, "x");
+```
 
 **SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE**
 
-Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста.
+Вставляемый текст не будет перенимать `Spannable` рядом стоящего текста.
 
-![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.png" }}){:style="width: 50% !important; margin: auto;"}
+![Flag EXCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ee.png" }}){:style="width: 30% !important; margin: auto;"}
 
 **SpannableString.SPAN_EXCLUSIVE_INCLUSIVE**
 
-Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен слева от родителя и будет если справа.
+Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен слева от родителя, и будет если вствлен справа.
 
-![Flag EXCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ei.png" }}){:style="width: 50% !important; margin: auto;"}
+![Flag EXCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ei.png" }}){:style="width: 30% !important; margin: auto;"}
 
 **SpannableString.SPAN_INCLUSIVE_EXCLUSIVE**
 
 
-Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен справа от родителя и будет если слева.
+Вставляемый текст никак не будет перенимать `Spannable` рядом стоящего текста, если он вставлен справа от родителя, и будет если вставлен слева.
 
-![Flag INCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ie.png" }}){:style="width: 50% !important; margin: auto;"}
+![Flag INCLUSIVE EXCLUSIVE]({{ "/assets/images/spans/flag_ie.png" }}){:style="width: 30% !important; margin: auto;"}
 
 **SpannableString.SPAN_INCLUSIVE_INCLUSIVE**
 
-Вставляемый текст никак будет перенимать `Spannable` рядом стоящего текста со всех сторон.
+Вставляемый текст будет перенимать `Spannable` рядом стоящего текста, позиция не важна.
 
-![Flag INCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ii.png" }}){:style="width: 50% !important; margin: auto;"}
+![Flag INCLUSIVE INCLUSIVE]({{ "/assets/images/spans/flag_ii.png" }}){:style="width: 30% !important; margin: auto;"}
 
 #### Лейаутинг __(размещение)__
 
