@@ -13,7 +13,7 @@ author: "st235"
 
 Например, необходимо посчитать время исполнения алгоритма
 
-```
+```java
 long startTime = System.currentTimeMillis();
 // какой-то код
 long endTime = System.currentTimeMillis();
@@ -21,7 +21,7 @@ long endTime = System.currentTimeMillis();
 
 для этого нужно засечь время в начале алгоритма, после его исполнения и вычислить разницу.
 
-```
+```java
 long duration = endTime - startTime; 
 ```
 
@@ -32,7 +32,7 @@ long duration = endTime - startTime;
 
 Модифицируем программу верно:
 
-```
+```java
 long startTime = SystemClock.elapsedRealtime();
 // какой-то код
 long endTime = SystemClock.elapsedRealtime();
