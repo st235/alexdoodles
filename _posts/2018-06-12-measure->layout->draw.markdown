@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Measure->Layout->Draw. Layouts & Views concepts."
-published: true
+published: false
 author: "st235"
 ---
 
