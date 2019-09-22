@@ -4,8 +4,7 @@ description: My Personal blog about technologies 📔
 highlighter: rouge
 logo: false
 paginate: 15
-baseurl: "/"
-#domain_name: 'http://github.io'
+baseurl: "/alexdoodles/"
 google_analytics: 'UA-112035371-1'
 
 # Details for the RSS feed generator
