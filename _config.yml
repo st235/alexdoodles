@@ -1,5 +1,5 @@
-name: st235.github.io
-description: New Technology Blog 📔
+name: Alex's Doodles
+description: My Personal blog about technologies 📔
 
 highlighter: rouge
 logo: false
@@ -9,7 +9,7 @@ baseurl: "/"
 google_analytics: 'UA-112035371-1'
 
 # Details for the RSS feed generator
-url: 'https://st235.github.io'
+url: 'https://st235.github.io/alexdoodles'
 author: 'Alexander Dadukin'
 encoding: utf-8
 
@@ -17,7 +17,7 @@ authors:
   st235:
     display_name: Alexander Dadukin
     gravatar: 1e5b1443b01e77523a9379c57178fbfc
-    email: st235@yandex.ru
+    email: hi@st235.xyz
     web: https://st235.github.io/
     twitter: snow_manul
     github: st235
